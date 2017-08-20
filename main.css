@@ -1,0 +1,16 @@
+h1 {
+  color: navy;
+  background-color: grey;
+  font-family: sans-serif;
+  text-align: center;
+  font-stretch: expanded;
+  font-size: 50px;
+}
+
+p {
+  color: darkblue;
+  background-color: lightgrey;
+  font-family: fantasy;
+  text-align: center;
+  font-size: 30px;
+}
