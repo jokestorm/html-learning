@@ -24,7 +24,7 @@ header nav {
   justify-content: flex-end;
 }
 
-header p {
+header a {
   padding: 0 20px;
   margin: 0;
 }
