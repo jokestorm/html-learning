@@ -10,14 +10,14 @@
 </head>
 
 <section class="top">
-  <header class="container">
+  <header id="navbar" class="container">
     <div class="row">
-      <a href="/index" class="col-sm-8"><h1>Jokestorm</h1></a>
+      <a href="index.html" class="col-sm-8"><h1>Jokestorm</h1></a>
       <nav class="col-sm-4">
-        <a href="/memes">Memes</p>
-        <a href="/videos">Videos</a>
-        <a href="/streams">Streams</a>
-        <a href="/contact">Contact</a>
+        <a href="memes.html">Memes</p>
+        <a href="videos.html">Videos</a>
+        <a href="streams.html">Streams</a> 
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -25,16 +25,22 @@
 
 <body>
   <section>
-    <div class="container">
+    <div id="content" class="container">
       <div class="row text-center">
         <h2>Streams</h2>
-          <!-- Add a placeholder for the Twitch embed -->
+          <hr>
           <div id="twitch-embed" ></div>
-
-          <!-- Load the Twitch embed script -->
           <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-          <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+          <script type="text/javascript">
+            new Twitch.Embed("twitch-embed", {
+              width: 854,
+              height: 480,
+              channel: "thejokestorm",
+              theme: "dark"
+            });
+          </script>
+          <div id="twitch-embed" ></div>
+          <script src="https://embed.twitch.tv/embed/v1.js"></script>
           <script type="text/javascript">
             new Twitch.Embed("twitch-embed", {
               width: 854,
@@ -43,7 +49,16 @@
               theme: "dark"
             });
           </script>
-        <!--<a class="btn btn-primary" href="streams.html">Page 2</a>-->
+          <div id="twitch-embed" ></div>
+          <script src="https://embed.twitch.tv/embed/v1.js"></script>
+          <script type="text/javascript">
+            new Twitch.Embed("twitch-embed", {
+              width: 854,
+              height: 480,
+              channel: "el_mismo",
+              theme: "dark"
+            });
+          </script>
       </div>
     </div>
   </section>
