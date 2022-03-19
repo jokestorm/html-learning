@@ -1,0 +1,35 @@
+:root{
+    /* CSS HEX */
+    --xanadu: #788475ff;
+    --pale-spring-bud: #eaf8bfff;
+    --green-blue-crayola: #2892d7ff;
+    --black: #000000ff;
+    --rich-black-fogra-29: #0c1821ff;
+}
+
+
+body {
+    background-color: var(--green-blue-crayola);
+}
+
+h1 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: xx-large;
+    background-color: var(--pale-spring-bud);
+    padding: 10px;
+}
+
+.post-holder {
+    width: 700px;
+    height: auto;
+    border: 5px solid var(--xanadu);
+}
+
+.post {
+    width: auto;
+    height: 200px;
+    border: 5px solid black;
+    margin: 5px;
+}
