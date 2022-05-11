@@ -11,7 +11,7 @@
     <title>Idle</title>
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary text-center">
     <nav class="site-header sticky-top py-1">
         <div class="container d-flex flex-row justify-content-between fs-2">
             <a class="py-2 d-inline-block" href="#">Shop</a>
@@ -21,21 +21,20 @@
     </nav>
     <div class="position-relative overflow-hidden my-2 bg-light">
         <div class="col mx-auto my-1">
-            <h1 class="text-center display-4 font-weight-normal">Idle</h1>
+            <h1 class="display-4 font-weight-normal">Idle</h1>
         </div>
     </div>
-    <div class="col my-1 float-left">
+    <div class="col my-1 text-end">
         <h1 class="display-4 font-weight-normal">Things: <span id="total">0</span></h1>
     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-5">
-                <button class="btn btn-dark disabled" id="btn-cost">Make Thing Faster</button>
-                Cost: <strong id="cost">0</strong>
+                <button class="btn btn-dark disabled" id="btn-upgrade">Make Thing Faster</button>
+                Cost: <strong id="cost">10</strong>
             </div>
             <div class="col-7">
                 <button class="btn btn-dark" id="btn-click">Make Thing</button>
-                Things: <strong id="counter">0</strong>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
