@@ -2,37 +2,99 @@ console.log('App Start')
 //let $ = require('jquery')
 
 const total = document.getElementById('total')
-const upgradeButton = document.getElementById('btn-upgrade')
-const upgradeCost = document.getElementById('cost')
-const clickButton = document.getElementById('btn-click')
+const upgradeButton1 = document.getElementById('btn-upgrade1')
+const upgradeButton2 = document.getElementById('btn-upgrade2')
+const autoButton1 = document.getElementById('btn-auto1')
+const autoButton2 = document.getElementById('btn-auto2')
+const upgradeCost1 = document.getElementById('cost-upgrade1')
+const upgradeCost2 = document.getElementById('cost-upgrade2')
+const autoCost1 = document.getElementById('cost-auto1')
+const autoCost2 = document.getElementById('cost-auto2')
+const clickButton1 = document.getElementById('btn-click1')
+const clickButton2 = document.getElementById('btn-click2')
+const tick1Text = document.getElementById('tick1')
+const tick2Text = document.getElementById('tick2')
 
-let tickValue = 1
+let tickValue1 = 1
+let tickValue2 = 10
 
-clickButton.addEventListener('click', async () => {
-    tick()
+clickButton1.addEventListener('click', async () => {
+    tick1()
 })
 
-upgradeButton.addEventListener('click', async () => {
+clickButton2.addEventListener('click', async () => {
+    tick2()
+})
+
+autoButton1.addEventListener('click', async () => {
+    setInterval(tick1, 1000)
+})
+
+autoButton2.addEventListener('click', async () => {
+    setInterval(tick2, 5000)
+})
+
+upgradeButton1.addEventListener('click', async () => {
     const oldTotal = Number(total.innerText)
-    total.innerText = oldTotal - Number(upgradeCost.innerText)
-    tickValue++
-    const oldCost = Number(upgradeCost.innerText)
-    upgradeCost.innerText = oldCost * 2
+    total.innerText = oldTotal - Number(upgradeCost1.innerText)
+    tickValue1++
+    const oldCost = Number(upgradeCost1.innerText)
+    upgradeCost1.innerText = oldCost * 2
+    console.log(`tickValue: ${tickValue1}`)
     checkCosts()
+    tick1Text.innerText = tickValue1
 })
 
-function tick() {
+upgradeButton2.addEventListener('click', async () => {
+    const oldTotal = Number(total.innerText)
+    total.innerText = oldTotal - Number(upgradeCost2.innerText)
+    tickValue2 += 5
+    const oldCost = Number(upgradeCost2.innerText)
+    upgradeCost2.innerText = oldCost * 2
+    console.log(`tickValue: ${tickValue2}`)
+    checkCosts()
+    tick2Text.innerText = tickValue2
+
+})
+
+function tick1() {
     const oldValue = Number(total.innerText)
-    const newValue = oldValue + tickValue
+    const newValue = oldValue + tickValue1
+    total.innerText = newValue
+
+    checkCosts()
+}
+
+function tick2() {
+    const oldValue = Number(total.innerText)
+    const newValue = oldValue + tickValue2
     total.innerText = newValue
 
     checkCosts()
 }
 
 function checkCosts() {
-    if (Number(total.innerHTML) >= Number(upgradeCost.innerText)) {
-        upgradeButton.classList.remove('disabled')
+    if (Number(total.innerHTML) >= Number(upgradeCost1.innerText)) {
+        upgradeButton1.classList.remove('disabled')
     } else {
-        upgradeButton.classList.add('disabled')
+        upgradeButton1.classList.add('disabled')
+    }
+
+    if (Number(total.innerHTML) >= Number(upgradeCost2.innerText)) {
+        upgradeButton2.classList.remove('disabled')
+    } else {
+        upgradeButton2.classList.add('disabled')
+    }
+
+    if (Number(total.innerHTML) >= Number(autoCost1.innerText)) {
+        autoButton1.classList.remove('disabled')
+    } else {
+        autoButton1.classList.add('disabled')
+    }
+
+    if (Number(total.innerHTML) >= Number(autoCost2.innerText)) {
+        autoButton2.classList.remove('disabled')
+    } else {
+        autoButton2.classList.add('disabled')
     }
 }

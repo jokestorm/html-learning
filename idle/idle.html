@@ -24,17 +24,34 @@
             <h1 class="display-4 font-weight-normal">Idle</h1>
         </div>
     </div>
-    <div class="col my-1 text-end">
+    <div class="col my-1">
         <h1 class="display-4 font-weight-normal">Things: <span id="total">0</span></h1>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-5">
-                <button class="btn btn-dark disabled" id="btn-upgrade">Make Thing Faster</button>
-                Cost: <strong id="cost">10</strong>
+        <div class="row my-2">
+            <div class="col-2">
+                <button class="btn btn-primary disabled" id="btn-auto1">Auto Guy</button>
+                Cost: <strong id="cost-auto1">1000</strong>
             </div>
-            <div class="col-7">
-                <button class="btn btn-dark" id="btn-click">Make Thing</button>
+            <div class="col-4">
+                <button class="btn btn-dark disabled" id="btn-upgrade1">Make Thing Faster</button>
+                Cost: <strong id="cost-upgrade1">10</strong>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-dark" id="btn-click1">Make Thing <strong id="tick1">1</strong></button>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-2">
+            <button class="btn btn-primary disabled" id="btn-auto2">Auto Dude</button>
+            Cost: <strong id="cost-auto2">100000</strong>
+        </div>
+            <div class="col-4">
+                <button class="btn btn-dark disabled" id="btn-upgrade2">Make Stuff Faster</button>
+                Cost: <strong id="cost-upgrade2">25</strong>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-dark" id="btn-click2">Make Stuff <strong id="tick2">10</strong></button>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

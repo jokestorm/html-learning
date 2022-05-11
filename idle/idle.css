@@ -30,3 +30,6 @@
 .overflow-hidden {
     overflow: hidden;
 }
+button {
+    min-width: 155px;
+}
