@@ -14,9 +14,13 @@ const clickButton1 = document.getElementById('btn-click1')
 const clickButton2 = document.getElementById('btn-click2')
 const tick1Text = document.getElementById('tick1')
 const tick2Text = document.getElementById('tick2')
+const auto1Text = document.getElementById('auto1')
+const auto2Text = document.getElementById('auto2')
 
 let tickValue1 = 1
 let tickValue2 = 10
+let auto1Count = 0
+let auto2Count = 0
 
 clickButton1.addEventListener('click', async () => {
     tick1()
@@ -27,11 +31,23 @@ clickButton2.addEventListener('click', async () => {
 })
 
 autoButton1.addEventListener('click', async () => {
+    const oldTotal = Number(total.innerText)
+    total.innerText = oldTotal - Number(autoCost1.innerText)
+    autoCost1.innerText = Number(autoCost1.innerText) + Number(autoCost1.innerText) / 2
+    checkCosts()
     setInterval(tick1, 1000)
+    auto1Count++
+    auto1Text.innerText = auto1Count
 })
 
 autoButton2.addEventListener('click', async () => {
+    const oldTotal = Number(total.innerText)
+    total.innerText = oldTotal - Number(autoCost2.innerText)
+    autoCost2.innerText = Number(autoCost2.innerText) + Number(autoCost2.innerText) / 2
+    checkCosts()
     setInterval(tick2, 5000)
+    auto2Count++
+    auto2Text.innerText = auto2Count
 })
 
 upgradeButton1.addEventListener('click', async () => {
@@ -40,7 +56,6 @@ upgradeButton1.addEventListener('click', async () => {
     tickValue1++
     const oldCost = Number(upgradeCost1.innerText)
     upgradeCost1.innerText = oldCost * 2
-    console.log(`tickValue: ${tickValue1}`)
     checkCosts()
     tick1Text.innerText = tickValue1
 })
@@ -51,7 +66,6 @@ upgradeButton2.addEventListener('click', async () => {
     tickValue2 += 5
     const oldCost = Number(upgradeCost2.innerText)
     upgradeCost2.innerText = oldCost * 2
-    console.log(`tickValue: ${tickValue2}`)
     checkCosts()
     tick2Text.innerText = tickValue2
 
